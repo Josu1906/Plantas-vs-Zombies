@@ -29,7 +29,12 @@ public class Controller {
 	 */
 	public void run() {
 		// TODO fill your code
-		this.view.showGame();
+		
+		boolean quit = false;
+		
+		while(!quit) {			
+			this.view.showGame();
+		}
 		
 	}
 

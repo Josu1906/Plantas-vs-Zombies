@@ -61,16 +61,15 @@ public class SunflowerList {
 		cont++;
 		
 	}
-		public String iconInPosition(Position position) {
+	public String iconInPosition(Position position) {
 			
 			boolean encontrado = false;
 			int i = 0;
-			String ret;
+			String ret = null;
 			
 			while(i < cont && !sunflower_list[i].isInPosition(position)) i++;
 			
-			if(sunflower_list[i].isInPosition(position))){
-				
+			if(sunflower_list[i].isInPosition(position)){
 				ret = sunflower_list[i].getIcon();
 			}
 			

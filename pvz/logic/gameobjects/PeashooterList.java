@@ -52,8 +52,8 @@ public class PeashooterList {
 		}
 	}
 	
-	public void add(Sunflower sunflower) {
-		peashooter_list[cont] = sunflower;
+	public void add(Peashooter peashooter) {
+		peashooter_list[cont] = peashooter;
 		cont++;
 		
 	}
@@ -61,11 +61,11 @@ public class PeashooterList {
 			
 			boolean encontrado = false;
 			int i = 0;
-			String ret;
+			String ret = null;
 			
 			while(i < cont && !peashooter_list[i].isInPosition(position)) i++;
 			
-			if(peashooter_list[i].isInPosition(position))){
+			if(peashooter_list[i].isInPosition(position)){
 				
 				ret = peashooter_list[i].getIcon();
 			}

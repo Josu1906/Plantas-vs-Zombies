@@ -21,7 +21,7 @@ public class Sunflower {
 	public void update() {
 		
 		if((cyclesAlive % 3) == 0) {			
-			game.generateCoins(3.33);
+			game.generateCoins(10);
 		}
 		
 		cyclesAlive++;

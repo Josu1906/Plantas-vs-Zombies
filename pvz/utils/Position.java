@@ -1,5 +1,7 @@
 package pvz.utils;
 
+import java.util.Objects;
+
 public class Position {
 	
 	private int row;
@@ -18,5 +20,22 @@ public class Position {
 	public int col() {
 		// TODO Auto-generated method stub
 		return col;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(col, row);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Position other = (Position) obj;
+		return col == other.col && row == other.row;
 	}
 }
