@@ -46,6 +46,7 @@ public class PlantsVsZombies {
 			usage();
 			return;
 		}
+		System.out.println("se ejecuta");
 
 		long seed = System.currentTimeMillis() % 1000;
 		String seedParam = "";
