@@ -8,9 +8,14 @@ public class SunflowerList {
 	private Sunflower sunflower_list[];
 	private int cont;
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}*/
+	
+	public SunflowerList() {
+		this.sunflower_list=new Sunflower[100];
+		cont=0;
 	}
 	
 	public boolean isEmpty(Position position) {
@@ -39,12 +44,9 @@ public class SunflowerList {
 				
 				sunflower_list[cont - 1] = null;
 				cont--;
-				
+				i--; //hay que decrementar i, porque sino el elemento movido a posicion i no se comprueba
 			}
-			
 		}
-		
-		
 	}
 	
 	public void update() {
@@ -63,18 +65,27 @@ public class SunflowerList {
 	}
 	public String iconInPosition(Position position) {
 			
-			boolean encontrado = false;
+			boolean encontrado = false; //se puede quitarlo
 			int i = 0;
 			String ret = null;
 			
 			while(i < cont && !sunflower_list[i].isInPosition(position)) i++;
 			
-			if(sunflower_list[i].isInPosition(position)){
-				ret = sunflower_list[i].getIcon();
+			if(i<cont) {
+				//if(sunflower_list[i].isInPosition(position)){
+					ret = sunflower_list[i].getIcon();
+				//}
 			}
 			
 			return ret;
 			
+	}
+	
+	public void receiveDamage(Position p, int damage) {
+		
+		int i = 0;		
+		while(i < cont && !sunflower_list[i].isInPosition(p)) i++;
+		if(i<cont) sunflower_list[i].receiveDamage(damage);
 	}
 
 }

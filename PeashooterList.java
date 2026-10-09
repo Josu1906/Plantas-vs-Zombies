@@ -8,6 +8,10 @@ public class PeashooterList {
 	private Peashooter peashooter_list[];
 	private int cont;
 	
+	public PeashooterList() {
+		peashooter_list=new Peashooter[100];
+		cont=0;
+	}
 	
 	public boolean isEmpty(Position position) {
 		int i = 0;
@@ -35,6 +39,7 @@ public class PeashooterList {
 				
 				peashooter_list[cont - 1] = null;
 				cont--;
+				i--;
 				
 			}
 			
@@ -57,22 +62,30 @@ public class PeashooterList {
 		cont++;
 		
 	}
-		public String iconInPosition(Position position) {
+	
+	public String iconInPosition(Position position) {
+		
+		int i = 0;
+		String ret = null;
+		
+		while(i < cont && !peashooter_list[i].isInPosition(position)) i++;
+		
+		if(i<cont) {
 			
-			boolean encontrado = false;
-			int i = 0;
-			String ret = null;
-			
-			while(i < cont && !peashooter_list[i].isInPosition(position)) i++;
-			
-			if(peashooter_list[i].isInPosition(position)){
-				
-				ret = peashooter_list[i].getIcon();
-			}
-			
-			return ret;
+			ret = peashooter_list[i].getIcon();
+		}
+		
+		return ret;
 			
 	}
+	
+	public void receiveDamage(Position p, int damage) {
+		
+		int i = 0;		
+		while(i < cont && !peashooter_list[i].isInPosition(p)) i++;
+		if(i<cont) peashooter_list[i].receiveDamage(damage);
+	}
+
 
 }
 

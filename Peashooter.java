@@ -11,15 +11,17 @@ public class Peashooter {
 	private	Position position;
 	private Game game;
 	
-	public Peashooter(int row, int col, Game gamee) {
+	public Peashooter(Position position, Game gamee) {
 		
-		position = new Position(row, col);
+		this.position = new position;
 		game = gamee;
 	}
 	
 	public void update() {
 		
-		game.generateCoins(1);
+		//game.generateCoins(1); peashooter ataca, no genera coins
+		
+		game.attackZombie(position, damage);
 
 	}
 	
@@ -31,12 +33,12 @@ public class Peashooter {
 	}
 	
 	public void receiveDamage(int damage) {
-		this.damage -= damage;
+		this.strenght -= damage;
 	}
 	
 	public boolean isAlive() {
 		boolean ishe = true;
-		if(this.damage < 1) ishe = false;
+		if(this.strenght < 1) ishe = false;
 		
 		return ishe;
 	}
@@ -46,11 +48,12 @@ public class Peashooter {
 		boolean isIn = false;
 		
 		if(position.row() == this.position.row() && position.col() == this.position.col()) {
-			isIn = false;
+			isIn = true;
 		}
 		
-		
 		return isIn;
+		//return this.position.equals(position);
+
 	}
 
 	public String getIcon() {

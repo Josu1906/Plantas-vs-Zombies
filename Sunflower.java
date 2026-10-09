@@ -12,19 +12,17 @@ public class Sunflower {
 	private Game game;
 	private int cyclesAlive = 0;
 	
-	public Sunflower(int row, int col, Game gamee) {
+	public Sunflower(Position position, Game gamee) {
 		
-		position = new Position(row, col);
+		this.position = new position;
 		game = gamee;
 	}
 	
 	public void update() {
-		
+		cyclesAlive++;
 		if((cyclesAlive % 3) == 0) {			
 			game.generateCoins(10);
 		}
-		
-		cyclesAlive++;
 	}
 	
 	
@@ -35,12 +33,12 @@ public class Sunflower {
 	}
 	
 	public void receiveDamage(int damage) {
-		this.damage -= damage;
+		this.strenght -= damage;
 	}
 	
 	public boolean isAlive() {
 		boolean ishe = true;
-		if(this.damage < 1) ishe = false;
+		if(this.strenght < 1) ishe = false;
 		
 		return ishe;
 	}
@@ -50,11 +48,12 @@ public class Sunflower {
 		boolean isIn = false;
 		
 		if(position.row() == this.position.row() && position.col() == this.position.col()) {
-			isIn = false;
+			isIn = true;
 		}
 		
 		
 		return isIn;
+		//return this.position.equals(position);
 	}
 
 	public String getIcon() {
