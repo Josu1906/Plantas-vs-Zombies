@@ -64,12 +64,12 @@ public enum Level {
 
 	public int getNumberOfZombies() {
 		// TODO Auto-generated method stub
-		return 0;
+		return numberOfZombies;
 	}
 
 
 	public double getZombieFrequency() {
 		// TODO Auto-generated method stub
-		return 0;
+		return zombieFrequency;
 	}
 }

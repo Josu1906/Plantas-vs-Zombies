@@ -22,11 +22,11 @@ public class Position {
 		return col;
 	}
 	
-	boolean isHorinzontallyAligned(Position pos) {
+	public boolean isHorizontallyAligned(Position pos) {
 		return this.row==pos.row;
 	}
 	
-	boolean isHorinzontallyAligned(Position pos) {
+	public boolean isVerticallyAligned(Position pos) {
 		return this.col==pos.col;
 	}
 	

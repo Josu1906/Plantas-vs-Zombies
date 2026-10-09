@@ -13,7 +13,7 @@ public class Peashooter {
 	
 	public Peashooter(Position position, Game gamee) {
 		
-		this.position = new position;
+		this.position = position;
 		game = gamee;
 	}
 	
@@ -47,7 +47,7 @@ public class Peashooter {
 		
 		boolean isIn = false;
 		
-		if(position.row() == this.position.row() && position.col() == this.position.col()) {
+		if(position.row() == this.position.row() && position.column() == this.position.column()) {
 			isIn = true;
 		}
 		
