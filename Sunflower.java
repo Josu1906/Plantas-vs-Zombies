@@ -5,7 +5,7 @@ import pvz.utils.Position;
 
 public class Sunflower {
 	
-	private int cost = 20;
+	public static final int cost = 20;
 	private int strenght = 1;
 	private int damage = 0;
 	private	Position position;
@@ -25,8 +25,6 @@ public class Sunflower {
 		}
 	}
 	
-	
-
 	public static Object getDescription() {
 		// TODO Auto-generated method stub
 		return null;
@@ -58,6 +56,14 @@ public class Sunflower {
 
 	public String getIcon() {
 		return "S[0" + strenght + "]";
+	}
+	
+	public static final String shortName() {
+		return "S";
+	}
+	
+	public static final String longName() {
+		return"Sunflower";
 	}
 
 }

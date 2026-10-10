@@ -53,4 +53,8 @@ public class Zombie {
 	public boolean isAlive() {
 		return strenght>0;
 	}
+	
+	public int getCol() {
+		return position.column();
+	}
 }

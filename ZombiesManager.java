@@ -72,13 +72,13 @@ public class ZombiesManager {
 		return canAdd;
 	}
 
-	private boolean isPositionEmpty(int numCols, int row) {
+	public boolean isPositionEmpty(int numCols, int row) {
 		// TODO Auto-generated method stub
 		Position p=new Position(row, numCols-1);
 		return game.isEmpty(p);
 	}
 
-	private int getRemainingZombies() {
+	public int getRemainingZombies() {
 		// TODO Auto-generated method stub
 		return remainingZombies;
 	}

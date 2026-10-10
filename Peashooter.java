@@ -5,7 +5,7 @@ import pvz.utils.Position;
 
 public class Peashooter {
 	
-	private int cost = 50;
+	public static final int cost = 50;
 	private int strenght = 3;
 	private int damage = 1;
 	private	Position position;
@@ -58,6 +58,14 @@ public class Peashooter {
 
 	public String getIcon() {
 		return "P[0" + strenght + "]";
+	}
+	
+	public static final String shortName() {
+		return "P";
+	}
+	
+	public static final String longName() {
+		return"Peashooter";
 	}
 
 }

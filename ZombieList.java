@@ -38,7 +38,7 @@ public class ZombieList {
 		cont++;
 	}
 	
-	public boolean damage(Position p, int damage) {
+	/*public boolean damage(Position p, int damage) {
 		int i=0;
 		boolean ret=false;
 		
@@ -52,6 +52,28 @@ public class ZombieList {
 		}
 		
 		return ret;
+	}*/
+	
+	public boolean damage(Position p, int damage) {
+		int i=0;
+		int colMasDerecha=Game.NUM_COLS;
+		int zombieMasDerecha=-1;
+		
+		while(i<cont){
+			if(zombie_list[i].isHorizontallyAligned(p) && 
+					zombie_list[i].getCol()<colMasDerecha &&
+					zombie_list[i].getCol()> p.column() &&
+					zombie_list[i].isAlive() ) {
+				colMasDerecha=zombie_list[i].getCol();
+				zombieMasDerecha=i;
+			}
+			i++;
+		}
+		if (zombieMasDerecha!=-1) {
+			zombie_list[zombieMasDerecha].receiveAttack(damage);
+		}
+		
+		return zombieMasDerecha!=-1;
 	}
 	
 	public boolean isEmpty(Position position) {
